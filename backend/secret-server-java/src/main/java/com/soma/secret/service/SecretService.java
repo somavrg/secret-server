@@ -8,5 +8,5 @@ import java.util.UUID;
 
 public interface SecretService {
     SecretDTO addSecret(NewSecretDTO newSecretDTO);
-    Optional<SecretDTO> getSecretByHash(UUID hash);
+    SecretDTO getSecretByHash(UUID hash);
 }
