@@ -9,7 +9,7 @@ import ErrorPage from './Pages/ErrorPage';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import RetrivePage from './Pages/RetrivePage';
+import RetrivePage from './Pages/RetrievePage';
 
 
 const router = createBrowserRouter([
