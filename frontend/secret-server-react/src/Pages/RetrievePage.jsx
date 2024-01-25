@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Retrive from '../Components/Retrieve'
+import Retrieve from '../Components/Retrieve'
 import { useNavigate } from "react-router-dom";
 import ErrorPage from './ErrorPage';
 
 
-const retriveSecret = (hash) => {
+const retrieveSecret = (hash) => {
     return fetch(`/api/secret/${hash}`, {
         method: "GET",
         headers: {
@@ -14,12 +14,12 @@ const retriveSecret = (hash) => {
 };
 
 
-const RetrivePage = () => {
+const RetrievePage = () => {
     const [error, setError] = useState(false);
     const navigate = useNavigate();
 
     const handleSearch = (hash) => {
-        retriveSecret(hash)
+        retrieveSecret(hash)
             .then((value) => {
                 console.log(value);
                 navigate("/home");
@@ -33,14 +33,14 @@ const RetrivePage = () => {
 
 
     return (
-        error ? 
+        error ?
             <ErrorPage />
         :
-            <Retrive
+            <Retrieve
                 onSearch={handleSearch}
                 onCancel={() => navigate("/home")}
             />
   );
 };
 
-export default RetrivePage;
+export default RetrievePage;

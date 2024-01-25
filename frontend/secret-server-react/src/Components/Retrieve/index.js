@@ -1,3 +1,3 @@
-import Retrive from "./Retrieve";
+import Retrieve from "./Retrieve";
 
-export default Retrive;
+export default Retrieve;

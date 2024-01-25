@@ -9,7 +9,7 @@ import ErrorPage from './Pages/ErrorPage';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import RetrivePage from './Pages/RetrievePage';
+import RetrievePage from './Pages/RetrievePage';
 
 
 const router = createBrowserRouter([
@@ -28,8 +28,8 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />
       },
       {
-        path: "/retrive",
-        element: <RetrivePage />,
+        path: "/retrieve",
+        element: <RetrievePage />,
         errorElement: <ErrorPage />
       }
     ]
