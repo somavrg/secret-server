@@ -27,7 +27,7 @@ public class SecretServiceImpl implements SecretService{
     public SecretDTO addSecret(NewSecretDTO newSecretDTO) {
 
         Secret newSecret = Secret.builder()
-                .secretText(newSecretDTO.secret())
+                .secretText(newSecretDTO.secretText())
                 .createdAt(LocalDateTime.now())
                 .expiresAt(LocalDateTime.now().plusMinutes(newSecretDTO.expireAfter()))
                 .remainingViews(newSecretDTO.expireAfterViews())
