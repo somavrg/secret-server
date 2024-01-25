@@ -1,6 +1,9 @@
 import { useState } from "react";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Retrive = ({ onSearch, onCancel }) => {
+const Retrieve = ({ onSearch, onCancel }) => {
 
     const [hash, setHash] = useState("");
 
@@ -9,25 +12,33 @@ const Retrive = ({ onSearch, onCancel }) => {
         onSearch(hash);
     };
 
-    
+
     return (
-        <form onSubmit={handleSearch}>
-            <input type="text"
-                placeholder="Search..."
-                value={hash}
-                onChange={(e) => setHash(e.target.value)}
-            />
-            <div className="buttons">
-                <button type="submit">
-                    Search
-                </button>
-                <button type="button" onClick={onCancel}>
-                    Cancel
-                </button>
-            </div>
-        </form>
+        <div className="container d-flex justify-content-center align-items-center">
+            <Form onSubmit={handleSearch} className="d-inline-block p-3">
+                <Form.Group controlId="formBasicSearch" className="m-3">
+                    <Form.Label className="justify-content-center fs-3 mb-3 fw-bold">Search Secret</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Search..."
+                        value={hash}
+                        onChange={(event) => setHash(event.target.value)}
+                        className="mb-3"
+                    />
+                </Form.Group>
+
+                <div className="d-flex justify-content-center">
+                    <Button variant="primary" type="submit" className="btn-sm me-2">
+                        Search
+                    </Button>
+                    <Button variant="secondary" onClick={onCancel} className="btn-sm">
+                        Cancel
+                    </Button>
+                </div>
+            </Form>
+        </div>
     );
 };
 
 
-export default Retrive;
+export default Retrieve;
