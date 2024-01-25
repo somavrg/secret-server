@@ -2,7 +2,7 @@ package com.soma.secret.model.DTO;
 
 
 public record NewSecretDTO(
-        String secret,
+        String secretText,
         int expireAfterViews,
         int expireAfter
 ) {
