@@ -68,7 +68,6 @@ const SecretForm = ({secret, onSave, onCancel}) => {
                 </div>
             </Form>
         </div>
-
     );
 
 };
