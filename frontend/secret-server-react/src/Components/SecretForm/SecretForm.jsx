@@ -10,16 +10,29 @@ const SecretForm = ({secret, onSave, onCancel}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const formData = new FormData(e.target);
-        const entries = [...formData.entries()];
+        if(validateForm()){
+            const formData = new FormData(e.target);
+            const entries = [...formData.entries()];
 
-        let secret = entries.reduce((acc, entry) => {
-            const [k, v] = entry;
-            acc[k] = v;
-            return acc;
-        }, {});
+            let secret = entries.reduce((acc, entry) => {
+                const [k, v] = entry;
+                acc[k] = v;
+                return acc;
+            }, {});
 
-        return onSave(secret);
+            return onSave(secret);
+        }
+    }
+    const validateForm = () => {
+        const secretText = document.getElementById("secretText").value;
+        const expireAfterViews = document.getElementById("expireAfterViews").value;
+        const expireAfter = document.getElementById("expireAfter").value;
+
+        if (secretText === "" || expireAfterViews === "" || expireAfter === "") {
+            alert("Please fill out all required fields.");
+            return false;
+        }
+        return true;
     }
 
 
