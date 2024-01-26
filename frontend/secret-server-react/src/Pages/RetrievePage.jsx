@@ -22,7 +22,7 @@ const RetrievePage = () => {
         retrieveSecret(hash)
             .then((value) => {
                 console.log(value);
-                navigate("/home");
+                navigate("/");
                 setError(false)
             })
             .catch((err) => {

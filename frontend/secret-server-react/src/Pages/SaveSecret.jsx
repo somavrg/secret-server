@@ -23,7 +23,7 @@ const SaveSecret = () => {
         createSecret(secret)
             .then((value) => {
                 console.log(value);
-                navigate("/home");
+                navigate("/");
                 setError(false);
             })
             .catch((err) => {
