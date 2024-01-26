@@ -33,12 +33,12 @@ const SaveSecret = () => {
     };
 
     return (
-        error ? 
+        error ?
             <ErrorPage />
         :
             <SecretForm
                 onSave={handleCreateSecret}
-                onCancel={() => navigate("/home")}
+                onCancel={() => navigate("/")}
             />
     );
 };

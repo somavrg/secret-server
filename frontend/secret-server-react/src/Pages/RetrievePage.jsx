@@ -38,7 +38,7 @@ const RetrievePage = () => {
         :
             <Retrieve
                 onSearch={handleSearch}
-                onCancel={() => navigate("/home")}
+                onCancel={() => navigate("/")}
             />
   );
 };
